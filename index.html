@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/javascript.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main>
+        <!--選單-->
+        <nav class="active">
+            <!--上部-->
+            <div class="top">
+                <!--上標題-->
+                <div class="title">
+                    <p class="name">NAME</p>
+                    <p>歡迎回來!</p>
+                </div>
+                <!--icon列-->
+                <div class="btnBox">
+                    <button class="changePw">
+                        <i></i>
+                    </button>
+                    <span></span>
+                    <button class="viewMode">
+                        <i></i>
+                    </button>
+                    <span></span>
+                    <button class="logout">
+                        <i></i>
+                    </button>
+                </div>
+            </div>
+            <!--主選單-->
+            <div class="mainNav">
+                <ul>
+                    <li>
+                        <i class="menu_ic"></i>
+                        <p>首頁</p>
+                    </li>
+                    <li>
+                        <i class="file_ic"></i>
+                        <p>API 文件</p>
+                    </li>
+                    <li>
+                        <i class="level_ic"></i>
+                        <p>排行榜設定</p>
+                    </li>
+                </ul>
+            </div>
+            <!--收縮-->
+            <button class="slideBtn">||</button>
+        </nav>
+        <!--主內容-->
+        <article>
+            <section class="content">
+                <div class="title">
+                    <p>首頁</p>
+                </div>
+                <!--簡述-->
+                <div class="infoBox">
+                    <p class="smallTitle">簡述</p>
+                    <ul>
+                        <li>在您的網頁中引用指定程式碼，即可使用本系統。</li>
+                        <li>
+                            其餘技術細節請參閱
+                            <span>API 技術手冊</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--操作預覽-->
+                <div class="demoBox">
+                    <div class="smallTitle">
+                        <p>操作預覽</p>
+                        <div class="demoImg">
+                            <p>預覽圖</p>
+                            <div class="rowBox">
+                                <i></i>
+                            </div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>
+                            <div>
+                                <label for="" class="active">
+                                    <input type="checkbox">
+                                </label>
+                                <p>跑馬燈 - 橫</p>
+                            </div>
+                            <img src="./images/marquee_row.png" alt="">
+                        </li>
+                        <li>
+                            <div>
+                                <label for="">
+                                    <input type="checkbox">
+                                </label>
+                                <p>跑馬燈 - 直</p>
+                            </div>
+                            <img src="./images/marquee_column.png" alt="">
+                        </li>
+                        <li>
+                            <div>
+                                <label for="">
+                                    <input type="checkbox">
+                                </label>
+                                <p>標準 (無圖標)</p>
+                            </div>
+                            <img src="./images/simple_list.png" alt="">
+                        </li>
+                        <li>
+                            <div>
+                                <label for="">
+                                    <input type="checkbox">
+                                </label>
+                                <p>標準 (皇冠)</p>
+                            </div>
+                            <img src="./images/crown_list.png" alt="">
+                        </li>
+                        <li>
+                            <div>
+                                <label for="">
+                                    <input type="checkbox">
+                                </label>
+                                <p>卡片</p>
+                            </div>
+                            <img src="./images/card_list.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="demo">
+                <div class="smallTitle">
+                    <p class="display">
+                        Demo展示:
+                        <span>跑馬燈 - 橫</span>
+                    </p>
+                    <p>
+                        Demo展示:
+                        <span>跑馬燈 - 直</span>
+                    </p>
+                    <p>
+                        Demo展示:
+                        <span>標準 (無圖標)</span>
+                    </p>
+                    <p>
+                        Demo展示:
+                        <span>標準 (皇冠)</span>
+                    </p>
+                    <p>
+                        Demo展示:
+                        <span>卡片</span>
+                    </p>
+                </div>
+                <div class="demoPlace">
+                    <div class="marquee_row display">
+                        <p>測試用測試用測試用測試用測試用測試用測試用測試用測試用測試用測試用測試用測試用測試用</p>
+                    </div>
+                    <div class="marquee_column">
+                        <p>測試用測試用測試用測試用測試用測試用測試用測試用測試用測試用測試用測試用測試用測試用</p>
+                    </div>
+                    <div class="standard_noImg">
+                        <ul>
+                            <li>
+                                <p class="page">1.</p>
+                                <p class="teamName">台灣 Taiwan</p>
+                                <div class="scoreBox">
+                                    <p class="bet">21.31000</p>
+                                    <p class="lastTime">
+                                        上次排名:
+                                        <span>0</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="page">2.</p>
+                                <p class="teamName">開曼群島 Cayman Islands</p>
+                                <div class="scoreBox">
+                                    <p class="bet">19.61000</p>
+                                    <p class="lastTime">
+                                        上次排名:
+                                        <span>0</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="page">3.</p>
+                                <p class="teamName">香港 Hong Kong</p>
+                                <div class="scoreBox">
+                                    <p class="bet">17.94000</p>
+                                    <p class="lastTime">
+                                        上次排名:
+                                        <span>0</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="page">4.</p>
+                                <p class="teamName">南非 South Africa</p>
+                                <div class="scoreBox">
+                                    <p class="bet">13.76000</p>
+                                    <p class="lastTime">
+                                        上次排名:
+                                        <span>0</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="page">5.</p>
+                                <p class="teamName">南韓 Korea</p>
+                                <div class="scoreBox">
+                                    <p class="bet">11.56000</p>
+                                    <p class="lastTime">
+                                        上次排名:
+                                        <span>0</span>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="standard_hasImg">
+                        <ul>
+                            <li>
+                                <i class="first">1</i>
+                                <p class="teamName">台灣 Taiwan</p>
+                                <div class="scoreBox">
+                                    <p class="bet">21.31000</p>
+                                    <p class="lastTime">
+                                        上次排名:
+                                        <span>0</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="second">2</i>
+                                <p class="teamName">開曼群島 Cayman Islands</p>
+                                <div class="scoreBox">
+                                    <p class="bet">19.61000</p>
+                                    <p class="lastTime">
+                                        上次排名:
+                                        <span>0</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="third">3</i>
+                                <p class="teamName">香港 Hong Kong</p>
+                                <div class="scoreBox">
+                                    <p class="bet">17.94000</p>
+                                    <p class="lastTime">
+                                        上次排名:
+                                        <span>0</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="third">4</i>
+                                <p class="teamName">南非 South Africa</p>
+                                <div class="scoreBox">
+                                    <p class="bet">13.76000</p>
+                                    <p class="lastTime">
+                                        上次排名:
+                                        <span>0</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="third">5</i>
+                                <p class="teamName">南韓 Korea</p>
+                                <div class="scoreBox">
+                                    <p class="bet">11.56000</p>
+                                    <p class="lastTime">
+                                        上次排名:
+                                        <span>0</span>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="standard_card">
+                        <ul>
+                            <li>
+                                <i class="page">1</i>
+                                <p class="teamName">台灣 Taiwan</p>
+                                <p class="bet">21.31000</p>
+                                <p class="lastTime">
+                                    上次排名:
+                                    <span>0</span>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="page">2</i>
+                                <p class="teamName">開曼群島 Cayman Islands</p>
+                                <p class="bet">19.61000</p>
+                                <p class="lastTime">
+                                    上次排名:
+                                    <span>0</span>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="page">3</i>
+                                <p class="teamName">香港 Hong Kong</p>
+                                <p class="bet">17.94000</p>
+                                <p class="lastTime">
+                                    上次排名:
+                                    <span>0</span>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="page">4</i>
+                                <p class="teamName">南非 South Africa</p>
+                                <p class="bet">17.76000</p>
+                                <p class="lastTime">
+                                    上次排名:
+                                    <span>0</span>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="page">5</i>
+                                <p class="teamName">南韓 South Korea</p>
+                                <p class="bet">11.56000</p>
+                                <p class="lastTime">
+                                    上次排名:
+                                    <span>0</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+</body>
+</html>

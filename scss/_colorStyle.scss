@@ -1,0 +1,81 @@
+$BG: #d9d9d9;
+$navBG: #141c24;
+
+//nav
+$nav_Color: #ffffff;
+$nav_Hover: #5a6fa0;
+$nav_Border: #999ca0;
+
+//home
+$mainColor_1: #141c24;
+$mainBorder_1: #141c24;
+@mixin checkBox {
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        pointer-events: none;
+    }
+
+    &::before {
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        border: solid 1px #868686;
+        border-radius: 50%;
+    }
+    
+    &:active {
+        opacity: 0.7;
+
+        &::before {
+            border-color: #0075ff;
+        }
+
+        &::after {
+            width: 70%;
+            height: 70%;
+            background: #0075ff;
+            border-radius: 50%;
+        }
+    }
+
+    &.active {
+
+        &::before {
+            border-color: #0075ff;
+        }
+
+        &::after {
+            width: 70%;
+            height: 70%;
+            background: #0075ff;
+            border-radius: 50%;
+        }
+    }
+}
+$rowBox_BG: #ffffff;
+$rowBox_Border: #313131;
+$rowBox_slideBG: #cccccc;
+$rowBox_Active: #0075ff;
+
+//marquee
+$marquee_BG: #ffffff;
+$marquee_Border: #141c24;
+
+//standard
+$standard_BG: #b07373;
+$standard_BG_2: #e39c9c;
+$standard_BG_3: #f0dbdb;
+$standard_crown_Color: #ffffff;
+$standard_crown_FirstBG: #dcb400;
+$standard_crown_secondBG: #9fa0a0;
+$standard_crown_thirdBG: #c47022;
+$standard_cardPage_BG: #ccb3b3;
+$standard_cardPage_Color: #721717;
+$standard_cardPage_Border: #c15761;
