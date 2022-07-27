@@ -19,7 +19,7 @@ article {
     }
 
     .content {
-        width: 680px;
+        width: 500px;
         height: auto;
         flex-shrink: 0;
 
@@ -141,7 +141,7 @@ article {
                 padding-left: 32px;
 
                 ol {
-                    width: 300px;
+                    width: 200px;
                     height: auto;
                     margin-right: 10px;
 
@@ -230,15 +230,16 @@ article {
             width: 100%;
             height: 100%;
             background: $demo_BG;
-            padding: 16px;
+            padding: 30px;
 
             .marqueeBox {
                 width: 100%;
                 height: 100%;
                 display: none;
+                justify-content: center;
 
                 &.display {
-                    display: block;
+                    display: flex;
                 }
 
                 //跑馬燈橫
