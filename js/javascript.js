@@ -6,6 +6,12 @@ $(function(){
         .toggleClass("active");
     })
 })
+$(function(){
+    $(".viewMode").on("click",function(){
+        $(".viewMode,body,article")
+        .toggleClass("darkMode");
+    })
+})
 
 //home
 

@@ -6,6 +6,10 @@ nav .viewMode i {
     background: url('../images/icon/svg/nav_mode_1.svg') no-repeat;
     background-size: contain;
 }
+nav .viewMode.darkMode i {
+    background: url('../images/icon/svg/nav_mode_2.svg') no-repeat;
+    background-size: contain;
+}
 nav .logout i {
     background: url('../images/icon/svg/nav_logout.svg') no-repeat;
     background-size: contain;

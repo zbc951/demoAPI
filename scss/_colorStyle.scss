@@ -1,4 +1,5 @@
 $BG: #d9d9d9;
+$BG_darkMode: #141c24;
 $navBG: #141c24;
 
 //nav
@@ -8,6 +9,7 @@ $nav_Border: #999ca0;
 
 //home
 $mainColor_1: #141c24;
+$mainColor_2: #ffffff;
 $mainBorder_1: #141c24;
 @mixin checkBox {
     position: relative;

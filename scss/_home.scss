@@ -208,9 +208,6 @@ article {
         .smallTitle {
             width: 100%;
             height: 32px;
-            color: $mainColor_1;
-            font-size: 24px;
-            font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -218,6 +215,9 @@ article {
             margin-bottom: 42px;
 
             p {
+                color: $mainColor_1;
+                font-size: 24px;
+                font-weight: bold;
                 display: none;
 
                 &.display {
@@ -557,6 +557,76 @@ article {
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+
+    &.darkMode {
+
+        .title {
+
+            p {
+                color: $mainColor_2;
+            }
+        }
+
+        .content {
+
+            .infoBox {
+
+                .smallTitle {
+                    color: $mainColor_2;
+                }
+
+                ul {
+
+                    li {
+                        color: $mainColor_2;
+                    }
+                }
+            }
+
+            .demoBox {
+
+                .smallTitle {
+
+                    &>p {
+                        color: $mainColor_2;
+                    }
+
+                    .demoImg {
+
+                        p {
+                            color: $mainColor_2;
+                        }
+                    }
+                }
+
+                ul {
+
+                    ol {
+
+                        li {
+
+                            div {
+
+                                p {
+                                    color: $mainColor_2;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .demo {
+
+            .smallTitle {
+
+                p {
+                    color: $mainColor_2;
                 }
             }
         }
