@@ -695,9 +695,11 @@ html body article .demo .demoPlace .marqueeBox .standard_card ul {
   height: auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 180px;
+  grid-template-columns: repeat(auto-fill, 200px);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  grid-auto-rows: 200px;
   gap: 20px;
 }
 html body article .demo .demoPlace .marqueeBox .standard_card ul li {
