@@ -25,6 +25,9 @@ $(function(){
         $(this)
         .addClass("active");
 
+        $(".demoPlace .marqueeBox")
+        .addClass("display");
+
         var n = $(this).closest("li").index();
 
         $(".demoPlace .marqueeBox>div:eq("+ n +")")
@@ -35,7 +38,7 @@ $(function(){
         .addClass("display")
         .siblings().removeClass("display");
 
-        $(".demo .standardBox p,.demoPlace .standardBox div")
+        $(".demo .standardBox p,.demoPlace .standardBox")
         .removeClass("display");
     })
 
@@ -44,6 +47,9 @@ $(function(){
         .removeClass("active");
         $(this)
         .addClass("active");
+
+        $(".demoPlace .standardBox")
+        .addClass("display");
 
         var n = $(this).closest("li").index();
 
@@ -55,7 +61,7 @@ $(function(){
         .addClass("display")
         .siblings().removeClass("display");
 
-        $(".demo .marqueeBox p,.demoPlace .marqueeBox div")
+        $(".demo .marqueeBox p,.demoPlace .marqueeBox")
         .removeClass("display");
     })
 })

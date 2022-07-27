@@ -123,11 +123,13 @@ nav .level_ic {
 }
 
 html body {
+  min-width: 1400px;
   background: #d9d9d9;
 }
 html body main {
   width: 100%;
   height: auto;
+  min-height: 937px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -280,7 +282,7 @@ html body article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 160px;
+  padding: 0 16px 60px 0;
 }
 html body article .title {
   width: 100%;
@@ -299,8 +301,10 @@ html body article .title p {
   font-weight: bold;
 }
 html body article .content {
-  width: 50%;
+  width: 680px;
   height: auto;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 html body article .content .infoBox {
   width: 100%;
@@ -508,7 +512,7 @@ html body article .content .demoBox ul ol li img.active {
   display: block;
 }
 html body article .demo {
-  width: 50%;
+  width: 100%;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -523,26 +527,14 @@ html body article .demo {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-top: 151px;
 }
 html body article .demo .smallTitle {
   width: 100%;
+  height: 32px;
   color: #141c24;
   font-size: 24px;
   font-weight: bold;
-  text-align: center;
-  margin: 30px 0;
-}
-html body article .demo .smallTitle p {
-  display: none;
-}
-html body article .demo .smallTitle p.display {
-  display: block;
-}
-html body article .demo .demoPlace {
-  width: 700px;
-  height: 700px;
-  background: #ffffff;
-  padding: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -552,9 +544,32 @@ html body article .demo .demoPlace {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-bottom: 42px;
 }
-html body article .demo .demoPlace .marquee_row {
-  width: 400px;
+html body article .demo .smallTitle p {
+  display: none;
+}
+html body article .demo .smallTitle p.display {
+  display: block;
+}
+html body article .demo .demoPlace {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  padding: 16px;
+}
+html body article .demo .demoPlace .marqueeBox {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+html body article .demo .demoPlace .marqueeBox.display {
+  display: block;
+}
+html body article .demo .demoPlace .marqueeBox .marquee_row {
+  width: 100%;
   height: 32px;
   background: #ffffff;
   border: solid 1px #141c24;
@@ -568,12 +583,12 @@ html body article .demo .demoPlace .marquee_row {
           justify-content: flex-start;
   overflow: hidden;
 }
-html body article .demo .demoPlace .marquee_row.display {
+html body article .demo .demoPlace .marqueeBox .marquee_row.display {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-html body article .demo .demoPlace .marquee_row p {
+html body article .demo .demoPlace .marqueeBox .marquee_row p {
   display: inline-block;
   width: auto;
   color: #141c24;
@@ -604,7 +619,7 @@ html body article .demo .demoPlace .marquee_row p {
             transform: translateX(-100%);
   }
 }
-html body article .demo .demoPlace .marquee_column {
+html body article .demo .demoPlace .marqueeBox .marquee_column {
   width: 32px;
   height: 400px;
   background: #ffffff;
@@ -623,12 +638,12 @@ html body article .demo .demoPlace .marquee_column {
           justify-content: flex-start;
   overflow: hidden;
 }
-html body article .demo .demoPlace .marquee_column.display {
+html body article .demo .demoPlace .marqueeBox .marquee_column.display {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-html body article .demo .demoPlace .marquee_column p {
+html body article .demo .demoPlace .marqueeBox .marquee_column p {
   display: inline-block;
   height: auto;
   color: #141c24;
@@ -662,19 +677,99 @@ html body article .demo .demoPlace .marquee_column p {
             transform: translateY(-100%);
   }
 }
-html body article .demo .demoPlace .standard_noImg {
+html body article .demo .demoPlace .marqueeBox .standard_card {
   width: 100%;
   height: auto;
   display: none;
 }
-html body article .demo .demoPlace .standard_noImg.display {
+html body article .demo .demoPlace .marqueeBox .standard_card.display {
   display: block;
 }
-html body article .demo .demoPlace .standard_noImg ul {
+html body article .demo .demoPlace .marqueeBox .standard_card ul {
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 180px;
+  gap: 20px;
+}
+html body article .demo .demoPlace .marqueeBox .standard_card ul li {
+  width: auto;
+  height: auto;
+  background: #f0dbdb;
+  position: relative;
+}
+html body article .demo .demoPlace .marqueeBox .standard_card ul li .page {
+  width: 45px;
+  height: auto;
+  background: #ccb3b3;
+  color: #721717;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  padding: 2px 5px;
+  margin: 10px 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 80% 50%, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 80% 50%, 100% 100%, 0 100%);
+}
+html body article .demo .demoPlace .marqueeBox .standard_card ul li .page::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 4px 0 4px;
+  border-color: #c15761 transparent;
+}
+html body article .demo .demoPlace .marqueeBox .standard_card ul li .teamName {
+  width: 100%;
+  color: #141c24;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+html body article .demo .demoPlace .marqueeBox .standard_card ul li .bet {
+  width: 100%;
+  color: #141c24;
+  font-size: 16px;
+  text-align: center;
+}
+html body article .demo .demoPlace .marqueeBox .standard_card ul li .lastTime {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: auto;
+  color: #141c24;
+  font-size: 14px;
+}
+html body article .demo .demoPlace .standardBox {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+html body article .demo .demoPlace .standardBox.display {
+  display: block;
+}
+html body article .demo .demoPlace .standardBox .standard_noImg {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+html body article .demo .demoPlace .standardBox .standard_noImg.display {
+  display: block;
+}
+html body article .demo .demoPlace .standardBox .standard_noImg ul {
   width: 100%;
   height: auto;
 }
-html body article .demo .demoPlace .standard_noImg ul li {
+html body article .demo .demoPlace .standardBox .standard_noImg ul li {
   width: 100%;
   height: 60px;
   background: #b07373;
@@ -691,19 +786,19 @@ html body article .demo .demoPlace .standard_noImg ul li {
   padding: 0 16px 0 60px;
   margin-bottom: 10px;
 }
-html body article .demo .demoPlace .standard_noImg ul li .page {
+html body article .demo .demoPlace .standardBox .standard_noImg ul li .page {
   color: #141c24;
   font-size: 18px;
   font-weight: bold;
   position: absolute;
   left: 15px;
 }
-html body article .demo .demoPlace .standard_noImg ul li .teamName {
+html body article .demo .demoPlace .standardBox .standard_noImg ul li .teamName {
   color: #141c24;
   font-size: 18px;
   font-weight: bold;
 }
-html body article .demo .demoPlace .standard_noImg ul li .scoreBox {
+html body article .demo .demoPlace .standardBox .standard_noImg ul li .scoreBox {
   width: auto;
   height: 100%;
   display: -webkit-box;
@@ -720,29 +815,29 @@ html body article .demo .demoPlace .standard_noImg ul li .scoreBox {
       -ms-flex-pack: center;
           justify-content: center;
 }
-html body article .demo .demoPlace .standard_noImg ul li .scoreBox .bet {
+html body article .demo .demoPlace .standardBox .standard_noImg ul li .scoreBox .bet {
   color: #141c24;
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 6px;
 }
-html body article .demo .demoPlace .standard_noImg ul li .scoreBox .lastTime {
+html body article .demo .demoPlace .standardBox .standard_noImg ul li .scoreBox .lastTime {
   color: #141c24;
   font-size: 12px;
 }
-html body article .demo .demoPlace .standard_hasImg {
+html body article .demo .demoPlace .standardBox .standard_hasImg {
   width: 100%;
   height: auto;
   display: none;
 }
-html body article .demo .demoPlace .standard_hasImg.display {
+html body article .demo .demoPlace .standardBox .standard_hasImg.display {
   display: block;
 }
-html body article .demo .demoPlace .standard_hasImg ul {
+html body article .demo .demoPlace .standardBox .standard_hasImg ul {
   width: 100%;
   height: auto;
 }
-html body article .demo .demoPlace .standard_hasImg ul li {
+html body article .demo .demoPlace .standardBox .standard_hasImg ul li {
   width: 100%;
   height: 60px;
   background: #e39c9c;
@@ -759,12 +854,15 @@ html body article .demo .demoPlace .standard_hasImg ul li {
   padding: 0 16px;
   margin-bottom: 30px;
 }
-html body article .demo .demoPlace .standard_hasImg ul li .teamName {
+html body article .demo .demoPlace .standardBox .standard_hasImg ul li:first-child {
+  margin-top: 20px;
+}
+html body article .demo .demoPlace .standardBox .standard_hasImg ul li .teamName {
   color: #141c24;
   font-size: 18px;
   font-weight: bold;
 }
-html body article .demo .demoPlace .standard_hasImg ul li .scoreBox {
+html body article .demo .demoPlace .standardBox .standard_hasImg ul li .scoreBox {
   width: auto;
   height: 100%;
   display: -webkit-box;
@@ -781,17 +879,17 @@ html body article .demo .demoPlace .standard_hasImg ul li .scoreBox {
       -ms-flex-pack: center;
           justify-content: center;
 }
-html body article .demo .demoPlace .standard_hasImg ul li .scoreBox .bet {
+html body article .demo .demoPlace .standardBox .standard_hasImg ul li .scoreBox .bet {
   color: #141c24;
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 6px;
 }
-html body article .demo .demoPlace .standard_hasImg ul li .scoreBox .lastTime {
+html body article .demo .demoPlace .standardBox .standard_hasImg ul li .scoreBox .lastTime {
   color: #141c24;
   font-size: 12px;
 }
-html body article .demo .demoPlace .standard_hasImg ul li i {
+html body article .demo .demoPlace .standardBox .standard_hasImg ul li i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -816,84 +914,12 @@ html body article .demo .demoPlace .standard_hasImg ul li i {
           clip-path: polygon(0 10%, 25% 45%, 50% 0, 75% 45%, 100% 10%, 100% 100%, 0 100%);
   padding-bottom: 3px;
 }
-html body article .demo .demoPlace .standard_hasImg ul li i.first {
+html body article .demo .demoPlace .standardBox .standard_hasImg ul li i.first {
   background: #dcb400;
 }
-html body article .demo .demoPlace .standard_hasImg ul li i.second {
+html body article .demo .demoPlace .standardBox .standard_hasImg ul li i.second {
   background: #9fa0a0;
 }
-html body article .demo .demoPlace .standard_hasImg ul li i.third {
+html body article .demo .demoPlace .standardBox .standard_hasImg ul li i.third {
   background: #c47022;
-}
-html body article .demo .demoPlace .standard_card {
-  width: 100%;
-  height: auto;
-  display: none;
-}
-html body article .demo .demoPlace .standard_card.display {
-  display: block;
-}
-html body article .demo .demoPlace .standard_card ul {
-  width: 100%;
-  height: auto;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 152px;
-  gap: 20px;
-}
-html body article .demo .demoPlace .standard_card ul li {
-  width: auto;
-  height: auto;
-  background: #f0dbdb;
-  position: relative;
-}
-html body article .demo .demoPlace .standard_card ul li .page {
-  width: 45px;
-  height: auto;
-  background: #ccb3b3;
-  color: #721717;
-  font-size: 14px;
-  font-weight: bold;
-  position: relative;
-  padding: 2px 5px;
-  margin: 10px 0;
-  -webkit-clip-path: polygon(0 0, 100% 0, 80% 50%, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 80% 50%, 100% 100%, 0 100%);
-}
-html body article .demo .demoPlace .standard_card ul li .page::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 6px 4px 0 4px;
-  border-color: #c15761 transparent;
-}
-html body article .demo .demoPlace .standard_card ul li .teamName {
-  width: 100%;
-  color: #141c24;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 15px;
-}
-html body article .demo .demoPlace .standard_card ul li .bet {
-  width: 100%;
-  color: #141c24;
-  font-size: 16px;
-  text-align: center;
-}
-html body article .demo .demoPlace .standard_card ul li .lastTime {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  width: auto;
-  color: #141c24;
-  font-size: 14px;
 }

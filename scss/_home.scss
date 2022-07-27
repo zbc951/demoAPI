@@ -2,7 +2,7 @@ article {
     width: 100%;
     height: auto;
     display: flex;
-    padding-bottom: 160px;
+    padding: 0 16px 60px 0;
 
     .title {
         width: 100%;
@@ -19,8 +19,9 @@ article {
     }
 
     .content {
-        width: 50%;
+        width: 680px;
         height: auto;
+        flex-shrink: 0;
 
         //簡述
         .infoBox {
@@ -196,20 +197,25 @@ article {
     }
 
     .demo {
-        width: 50%;
+        width: 100%;
         height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding-top: 151px;
 
         .smallTitle {
             width: 100%;
+            height: 32px;
             color: $mainColor_1;
             font-size: 24px;
             font-weight: bold;
-            text-align: center;
-            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-bottom: 42px;
 
             p {
                 display: none;
@@ -221,311 +227,332 @@ article {
         }
 
         .demoPlace {
-            width: 700px;
-            height: 700px;
+            width: 100%;
+            height: 100%;
             background: $demo_BG;
             padding: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
 
-            //跑馬燈橫
-            .marquee_row {
-                width: 400px;
-                height: 32px;
-                background: $marquee_BG;
-                border: solid 1px $marquee_Border;
-                border-radius: 32px;
-                display: none;
-                align-items: center;
-                justify-content: flex-start;
-                overflow: hidden;
-    
-                &.display {
-                    display: flex;
-                }
-    
-                p {
-                    display: inline-block;
-                    width: auto;
-                    color: $mainColor_1;
-                    font-size: 14px;
-                    font-weight: bold;
-                    white-space: nowrap;
-                    padding-left: 100%;
-                    animation: marquee_row 5s linear 0s infinite;
-                }
-    
-                @keyframes marquee_row {
-                    0% {
-                        transform: translateX(0);
-                    }
-    
-                    100% {
-                        transform: translateX(-100%);
-                    }
-                }
-            }
-    
-            //跑馬燈直
-            .marquee_column {
-                width: 32px;
-                height: 400px;
-                background: $marquee_BG;
-                border: solid 1px $marquee_Border;
-                border-radius: 32px;
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                overflow: hidden;
-
-                &.display {
-                    display: flex;
-                }
-    
-                p {
-                    display: inline-block;
-                    height: auto;
-                    color: $mainColor_1;
-                    font-size: 14px;
-                    font-weight: bold;
-                    white-space: nowrap;
-                    padding-top: 400px;
-                    writing-mode: vertical-lr;
-                    animation: marquee_column 5s linear 0s infinite;
-                }
-    
-                @keyframes marquee_column {
-                    0% {
-                        transform: translateY(0);
-                    }
-    
-                    100% {
-                        transform: translateY(-100%);
-                    }
-                }
-            }
-
-            //標準 (無圖標)
-            .standard_noImg {
+            .marqueeBox {
                 width: 100%;
-                height: auto;
+                height: 100%;
                 display: none;
 
                 &.display {
                     display: block;
                 }
 
-                ul {
+                //跑馬燈橫
+                .marquee_row {
                     width: 100%;
-                    height: auto;
-
-                    li {
-                        width: 100%;
-                        height: 60px;
-                        background: $standard_BG;
+                    height: 32px;
+                    background: $marquee_BG;
+                    border: solid 1px $marquee_Border;
+                    border-radius: 32px;
+                    display: none;
+                    align-items: center;
+                    justify-content: flex-start;
+                    overflow: hidden;
+        
+                    &.display {
                         display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        position: relative;
-                        padding: 0 16px 0 60px;
-                        margin-bottom: 10px;
-
-                        .page {
-                            color: $mainColor_1;
-                            font-size: 18px;
-                            font-weight: bold;
-                            position: absolute;
-                            left: 15px;
-                        }
-
-                        .teamName {
-                            color: $mainColor_1;
-                            font-size: 18px;
-                            font-weight: bold;
-                        }
-
-                        .scoreBox {
-                            width: auto;
-                            height: 100%;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            justify-content: center;
-
-                            .bet {
-                                color: $mainColor_1;
-                                font-size: 16px;
-                                font-weight: bold;
-                                margin-bottom: 6px;
-                            }
-
-                            .lastTime {
-                                color: $mainColor_1;
-                                font-size: 12px;
-                            }
-                        }
                     }
-                }
-            }
-
-            //標準 (皇冠)
-            .standard_hasImg {
-                width: 100%;
-                height: auto;
-                display: none;
-
-                &.display {
-                    display: block;
-                }
-                
-                ul {
-                    width: 100%;
-                    height: auto;
-
-                    li {
-                        width: 100%;
-                        height: 60px;
-                        background: $standard_BG_2;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        position: relative;
-                        padding: 0 16px;
-                        margin-bottom: 30px;
-                    
-                        .teamName {
-                            color: $mainColor_1;
-                            font-size: 18px;
-                            font-weight: bold;
-                        }
-
-                        .scoreBox {
-                            width: auto;
-                            height: 100%;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            justify-content: center;
-
-                            .bet {
-                                color: $mainColor_1;
-                                font-size: 16px;
-                                font-weight: bold;
-                                margin-bottom: 6px;
-                            }
-
-                            .lastTime {
-                                color: $mainColor_1;
-                                font-size: 12px;
-                            }
-                        }
-
-                        i {
-                            display: flex;
-                            width: 35px;
-                            height: 30px;
-                            color: $standard_crown_Color;
-                            font-size: 16px;
-                            font-weight: bold;
-                            display: flex;
-                            justify-content: center;
-                            align-items: flex-end;
-                            position: absolute;
-                            top: -20px;
-                            left: -10px;
-                            transform: rotate(-20deg);
-                            clip-path: polygon(0 10%, 25% 45%, 50%0, 75% 45%, 100% 10%, 100% 100%, 0 100%);
-                            padding-bottom: 3px;
-
-                            &.first {
-                                background: $standard_crown_FirstBG;
-                            }
-                            &.second {
-                                background: $standard_crown_secondBG;
-                            }
-                            &.third {
-                                background: $standard_crown_thirdBG;
-                            }
-                        }
-                    }
-                }
-            }
-
-            //卡片
-            .standard_card {
-                width: 100%;
-                height: auto;
-                display: none;
-
-                &.display {
-                    display: block;
-                }
-
-                ul {
-                    width: 100%;
-                    height: auto;
-                    display: grid;
-                    grid-template-columns: repeat(4,1fr);
-                    grid-auto-rows: 152px;
-                    gap: 20px;
-
-                    li {
+        
+                    p {
+                        display: inline-block;
                         width: auto;
+                        color: $mainColor_1;
+                        font-size: 14px;
+                        font-weight: bold;
+                        white-space: nowrap;
+                        padding-left: 100%;
+                        animation: marquee_row 5s linear 0s infinite;
+                    }
+        
+                    @keyframes marquee_row {
+                        0% {
+                            transform: translateX(0);
+                        }
+        
+                        100% {
+                            transform: translateX(-100%);
+                        }
+                    }
+                }
+        
+                //跑馬燈直
+                .marquee_column {
+                    width: 32px;
+                    height: 400px;
+                    background: $marquee_BG;
+                    border: solid 1px $marquee_Border;
+                    border-radius: 32px;
+                    display: none;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-start;
+                    overflow: hidden;
+
+                    &.display {
+                        display: flex;
+                    }
+        
+                    p {
+                        display: inline-block;
                         height: auto;
-                        background: $standard_BG_3;
-                        position: relative;
+                        color: $mainColor_1;
+                        font-size: 14px;
+                        font-weight: bold;
+                        white-space: nowrap;
+                        padding-top: 400px;
+                        writing-mode: vertical-lr;
+                        animation: marquee_column 5s linear 0s infinite;
+                    }
+        
+                    @keyframes marquee_column {
+                        0% {
+                            transform: translateY(0);
+                        }
+        
+                        100% {
+                            transform: translateY(-100%);
+                        }
+                    }
+                }
 
-                        .page {
-                            width: 45px;
+                //卡片
+                .standard_card {
+                    width: 100%;
+                    height: auto;
+                    display: none;
+
+                    &.display {
+                        display: block;
+                    }
+
+                    ul {
+                        width: 100%;
+                        height: auto;
+                        display: grid;
+                        grid-template-columns: repeat(4,1fr);
+                        grid-auto-rows: 180px;
+                        gap: 20px;
+
+                        li {
+                            width: auto;
                             height: auto;
-                            background: $standard_cardPage_BG;
-                            color: $standard_cardPage_Color;
-                            font-size: 14px;
-                            font-weight: bold;
+                            background: $standard_BG_3;
                             position: relative;
-                            padding: 2px 5px;
-                            margin: 10px 0;
-                            clip-path: polygon(0 0, 100% 0, 80% 50%, 100% 100%, 0 100%);
 
-                            &::before {
-                                content: "";
+                            .page {
+                                width: 45px;
+                                height: auto;
+                                background: $standard_cardPage_BG;
+                                color: $standard_cardPage_Color;
+                                font-size: 14px;
+                                font-weight: bold;
+                                position: relative;
+                                padding: 2px 5px;
+                                margin: 10px 0;
+                                clip-path: polygon(0 0, 100% 0, 80% 50%, 100% 100%, 0 100%);
+
+                                &::before {
+                                    content: "";
+                                    position: absolute;
+                                    top: 50%;
+                                    right: 15px;
+                                    transform: translateY(-50%);
+                                    width: 0;
+                                    height: 0;
+                                    border-style: solid;
+                                    border-width: 6px 4px 0 4px;
+                                    border-color: $standard_cardPage_Border transparent;
+                                }
+                            }
+
+                            .teamName {
+                                width: 100%;
+                                color: $mainColor_1;
+                                font-size: 18px;
+                                font-weight: bold;
+                                text-align: center;
+                                margin-bottom: 15px;
+                            }
+
+                            .bet {
+                                width: 100%;
+                                color: $mainColor_1;
+                                font-size: 16px;
+                                text-align: center;
+                            }
+
+                            .lastTime {
                                 position: absolute;
-                                top: 50%;
-                                right: 15px;
-                                transform: translateY(-50%);
-                                width: 0;
-                                height: 0;
-                                border-style: solid;
-                                border-width: 6px 4px 0 4px;
-                                border-color: $standard_cardPage_Border transparent;
+                                right: 5px;
+                                bottom: 5px;
+                                width: auto;
+                                color: $mainColor_1;
+                                font-size: 14px;
                             }
                         }
+                    }
+                }
+            }
 
-                        .teamName {
+            .standardBox {
+                width: 100%;
+                height: auto;
+                display: none;
+
+                &.display {
+                    display: block;
+                }
+
+                //標準 (無圖標)
+                .standard_noImg {
+                    width: 100%;
+                    height: auto;
+                    display: none;
+
+                    &.display {
+                        display: block;
+                    }
+
+                    ul {
+                        width: 100%;
+                        height: auto;
+
+                        li {
                             width: 100%;
-                            color: $mainColor_1;
-                            font-size: 18px;
-                            font-weight: bold;
-                            text-align: center;
-                            margin-bottom: 15px;
-                        }
+                            height: 60px;
+                            background: $standard_BG;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            position: relative;
+                            padding: 0 16px 0 60px;
+                            margin-bottom: 10px;
 
-                        .bet {
+                            .page {
+                                color: $mainColor_1;
+                                font-size: 18px;
+                                font-weight: bold;
+                                position: absolute;
+                                left: 15px;
+                            }
+
+                            .teamName {
+                                color: $mainColor_1;
+                                font-size: 18px;
+                                font-weight: bold;
+                            }
+
+                            .scoreBox {
+                                width: auto;
+                                height: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+
+                                .bet {
+                                    color: $mainColor_1;
+                                    font-size: 16px;
+                                    font-weight: bold;
+                                    margin-bottom: 6px;
+                                }
+
+                                .lastTime {
+                                    color: $mainColor_1;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                //標準 (皇冠)
+                .standard_hasImg {
+                    width: 100%;
+                    height: auto;
+                    display: none;
+
+                    &.display {
+                        display: block;
+                    }
+                    
+                    ul {
+                        width: 100%;
+                        height: auto;
+
+                        li {
                             width: 100%;
-                            color: $mainColor_1;
-                            font-size: 16px;
-                            text-align: center;
-                        }
+                            height: 60px;
+                            background: $standard_BG_2;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            position: relative;
+                            padding: 0 16px;
+                            margin-bottom: 30px;
 
-                        .lastTime {
-                            position: absolute;
-                            right: 5px;
-                            bottom: 5px;
-                            width: auto;
-                            color: $mainColor_1;
-                            font-size: 14px;
+                            &:first-child {
+                                margin-top: 20px;
+                            }
+                        
+                            .teamName {
+                                color: $mainColor_1;
+                                font-size: 18px;
+                                font-weight: bold;
+                            }
+
+                            .scoreBox {
+                                width: auto;
+                                height: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+
+                                .bet {
+                                    color: $mainColor_1;
+                                    font-size: 16px;
+                                    font-weight: bold;
+                                    margin-bottom: 6px;
+                                }
+
+                                .lastTime {
+                                    color: $mainColor_1;
+                                    font-size: 12px;
+                                }
+                            }
+
+                            i {
+                                display: flex;
+                                width: 35px;
+                                height: 30px;
+                                color: $standard_crown_Color;
+                                font-size: 16px;
+                                font-weight: bold;
+                                display: flex;
+                                justify-content: center;
+                                align-items: flex-end;
+                                position: absolute;
+                                top: -20px;
+                                left: -10px;
+                                transform: rotate(-20deg);
+                                clip-path: polygon(0 10%, 25% 45%, 50%0, 75% 45%, 100% 10%, 100% 100%, 0 100%);
+                                padding-bottom: 3px;
+
+                                &.first {
+                                    background: $standard_crown_FirstBG;
+                                }
+                                &.second {
+                                    background: $standard_crown_secondBG;
+                                }
+                                &.third {
+                                    background: $standard_crown_thirdBG;
+                                }
+                            }
                         }
                     }
                 }
