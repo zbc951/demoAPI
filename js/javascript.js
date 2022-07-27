@@ -19,19 +19,43 @@ $(function(){
     })
 })
 $(function(){
-    $(".demoBox label").on("change",function(){
+    $(".demoBox ol:first-child label").on("change",function(){
+        $(".demoBox label")
+        .removeClass("active");
         $(this)
-        .addClass("active")
-        .closest("li").siblings().find("label").removeClass("active");
+        .addClass("active");
 
         var n = $(this).closest("li").index();
 
-        $(".demoPlace>div:eq("+ n +")")
+        $(".demoPlace .marqueeBox>div:eq("+ n +")")
         .addClass("display")
         .siblings().removeClass("display");
 
-        $(".demo .smallTitle>p:eq("+ n +")")
+        $(".demo .marqueeBox p:eq("+ n +")")
         .addClass("display")
         .siblings().removeClass("display");
+
+        $(".demo .standardBox p,.demoPlace .standardBox div")
+        .removeClass("display");
+    })
+
+    $(".demoBox ol:last-child label").on("change",function(){
+        $(".demoBox label")
+        .removeClass("active");
+        $(this)
+        .addClass("active");
+
+        var n = $(this).closest("li").index();
+
+        $(".demoPlace .standardBox>div:eq("+ n +")")
+        .addClass("display")
+        .siblings().removeClass("display");
+
+        $(".demo .standardBox p:eq("+ n +")")
+        .addClass("display")
+        .siblings().removeClass("display");
+
+        $(".demo .marqueeBox p,.demoPlace .marqueeBox div")
+        .removeClass("display");
     })
 })
