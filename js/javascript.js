@@ -10,6 +10,33 @@ $(function(){
     $(".viewMode").on("click",function(){
         $(".viewMode,body,article")
         .toggleClass("darkMode");
+
+        if($("body").hasClass("darkMode"))
+        {
+            $(".demoBox .marqueeRow")
+            .attr("src","./images/marquee_row_2.jpg");
+            $(".demoBox .marqueeCol")
+            .attr("src","./images/marquee_column_2.jpg");
+            $(".demoBox .standardCard")
+            .attr("src","./images/card_list_2.jpg");
+            $(".demoBox .standardSimple")
+            .attr("src","./images/simple_list_2.jpg");
+            $(".demoBox .standardCrown")
+            .attr("src","./images/crown_list_2.jpg");
+        }
+        else
+        {
+            $(".demoBox .marqueeRow")
+            .attr("src","./images/marquee_row.jpg");
+            $(".demoBox .marqueeCol")
+            .attr("src","./images/marquee_column.jpg");
+            $(".demoBox .standardCard")
+            .attr("src","./images/card_list.jpg");
+            $(".demoBox .standardSimple")
+            .attr("src","./images/simple_list.jpg");
+            $(".demoBox .standardCrown")
+            .attr("src","./images/crown_list.jpg");
+        }
     })
 })
 

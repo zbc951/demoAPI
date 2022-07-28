@@ -959,3 +959,6 @@ html body article.darkMode .content .demoBox ul ol li div p {
 html body article.darkMode .demo .smallTitle p {
   color: #ffffff;
 }
+html body article.darkMode .demo .demoPlace {
+  background: #202931;
+}
